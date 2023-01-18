@@ -83,10 +83,38 @@ CMakeFiles/ares.dir/src/ares.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ares.dir/src/ares.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ali/proj/ares/src/ares.c -o CMakeFiles/ares.dir/src/ares.c.s
 
+CMakeFiles/ares.dir/src/cd.c.o: CMakeFiles/ares.dir/flags.make
+CMakeFiles/ares.dir/src/cd.c.o: ../src/cd.c
+CMakeFiles/ares.dir/src/cd.c.o: CMakeFiles/ares.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ares.dir/src/cd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ares.dir/src/cd.c.o -MF CMakeFiles/ares.dir/src/cd.c.o.d -o CMakeFiles/ares.dir/src/cd.c.o -c /home/ali/proj/ares/src/cd.c
+
+CMakeFiles/ares.dir/src/cd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ares.dir/src/cd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ali/proj/ares/src/cd.c > CMakeFiles/ares.dir/src/cd.c.i
+
+CMakeFiles/ares.dir/src/cd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ares.dir/src/cd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ali/proj/ares/src/cd.c -o CMakeFiles/ares.dir/src/cd.c.s
+
+CMakeFiles/ares.dir/src/exit.c.o: CMakeFiles/ares.dir/flags.make
+CMakeFiles/ares.dir/src/exit.c.o: ../src/exit.c
+CMakeFiles/ares.dir/src/exit.c.o: CMakeFiles/ares.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ares.dir/src/exit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ares.dir/src/exit.c.o -MF CMakeFiles/ares.dir/src/exit.c.o.d -o CMakeFiles/ares.dir/src/exit.c.o -c /home/ali/proj/ares/src/exit.c
+
+CMakeFiles/ares.dir/src/exit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ares.dir/src/exit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ali/proj/ares/src/exit.c > CMakeFiles/ares.dir/src/exit.c.i
+
+CMakeFiles/ares.dir/src/exit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ares.dir/src/exit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ali/proj/ares/src/exit.c -o CMakeFiles/ares.dir/src/exit.c.s
+
 CMakeFiles/ares.dir/src/help.c.o: CMakeFiles/ares.dir/flags.make
 CMakeFiles/ares.dir/src/help.c.o: ../src/help.c
 CMakeFiles/ares.dir/src/help.c.o: CMakeFiles/ares.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ares.dir/src/help.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ares.dir/src/help.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ares.dir/src/help.c.o -MF CMakeFiles/ares.dir/src/help.c.o.d -o CMakeFiles/ares.dir/src/help.c.o -c /home/ali/proj/ares/src/help.c
 
 CMakeFiles/ares.dir/src/help.c.i: cmake_force
@@ -97,19 +125,39 @@ CMakeFiles/ares.dir/src/help.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ares.dir/src/help.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ali/proj/ares/src/help.c -o CMakeFiles/ares.dir/src/help.c.s
 
+CMakeFiles/ares.dir/src/ls.c.o: CMakeFiles/ares.dir/flags.make
+CMakeFiles/ares.dir/src/ls.c.o: ../src/ls.c
+CMakeFiles/ares.dir/src/ls.c.o: CMakeFiles/ares.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ares.dir/src/ls.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ares.dir/src/ls.c.o -MF CMakeFiles/ares.dir/src/ls.c.o.d -o CMakeFiles/ares.dir/src/ls.c.o -c /home/ali/proj/ares/src/ls.c
+
+CMakeFiles/ares.dir/src/ls.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ares.dir/src/ls.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ali/proj/ares/src/ls.c > CMakeFiles/ares.dir/src/ls.c.i
+
+CMakeFiles/ares.dir/src/ls.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ares.dir/src/ls.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ali/proj/ares/src/ls.c -o CMakeFiles/ares.dir/src/ls.c.s
+
 # Object files for target ares
 ares_OBJECTS = \
 "CMakeFiles/ares.dir/src/ares.c.o" \
-"CMakeFiles/ares.dir/src/help.c.o"
+"CMakeFiles/ares.dir/src/cd.c.o" \
+"CMakeFiles/ares.dir/src/exit.c.o" \
+"CMakeFiles/ares.dir/src/help.c.o" \
+"CMakeFiles/ares.dir/src/ls.c.o"
 
 # External object files for target ares
 ares_EXTERNAL_OBJECTS =
 
 ../bin/ares: CMakeFiles/ares.dir/src/ares.c.o
+../bin/ares: CMakeFiles/ares.dir/src/cd.c.o
+../bin/ares: CMakeFiles/ares.dir/src/exit.c.o
 ../bin/ares: CMakeFiles/ares.dir/src/help.c.o
+../bin/ares: CMakeFiles/ares.dir/src/ls.c.o
 ../bin/ares: CMakeFiles/ares.dir/build.make
 ../bin/ares: CMakeFiles/ares.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ../bin/ares"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ali/proj/ares/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable ../bin/ares"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ares.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

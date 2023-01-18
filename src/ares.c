@@ -11,18 +11,6 @@ char **ares_split_line(char *line);
 int ares_launch(char **args);
 int ares_execute(char **args);
 
-/*
-int ares_ls(char **args) {
-  if (args[1] == NULL) {
-    fprintf(stderr, "ares: expected argument to \"ls\"\n");
-  } else {
-    if (execlp("ls", "ls", NULL) != 0) {
-      perror("ares");
-    }
-  }
-  return 1;
-} */
-
 int main(int argc, char **argv)
 {
   // Load config files, if any.

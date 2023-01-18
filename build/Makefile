@@ -153,6 +153,54 @@ src/ares.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/ares.c.s
 .PHONY : src/ares.c.s
 
+src/cd.o: src/cd.c.o
+.PHONY : src/cd.o
+
+# target to build an object file
+src/cd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/cd.c.o
+.PHONY : src/cd.c.o
+
+src/cd.i: src/cd.c.i
+.PHONY : src/cd.i
+
+# target to preprocess a source file
+src/cd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/cd.c.i
+.PHONY : src/cd.c.i
+
+src/cd.s: src/cd.c.s
+.PHONY : src/cd.s
+
+# target to generate assembly for a file
+src/cd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/cd.c.s
+.PHONY : src/cd.c.s
+
+src/exit.o: src/exit.c.o
+.PHONY : src/exit.o
+
+# target to build an object file
+src/exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/exit.c.o
+.PHONY : src/exit.c.o
+
+src/exit.i: src/exit.c.i
+.PHONY : src/exit.i
+
+# target to preprocess a source file
+src/exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/exit.c.i
+.PHONY : src/exit.c.i
+
+src/exit.s: src/exit.c.s
+.PHONY : src/exit.s
+
+# target to generate assembly for a file
+src/exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/exit.c.s
+.PHONY : src/exit.c.s
+
 src/help.o: src/help.c.o
 .PHONY : src/help.o
 
@@ -177,6 +225,30 @@ src/help.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/help.c.s
 .PHONY : src/help.c.s
 
+src/ls.o: src/ls.c.o
+.PHONY : src/ls.o
+
+# target to build an object file
+src/ls.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/ls.c.o
+.PHONY : src/ls.c.o
+
+src/ls.i: src/ls.c.i
+.PHONY : src/ls.i
+
+# target to preprocess a source file
+src/ls.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/ls.c.i
+.PHONY : src/ls.c.i
+
+src/ls.s: src/ls.c.s
+.PHONY : src/ls.s
+
+# target to generate assembly for a file
+src/ls.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ares.dir/build.make CMakeFiles/ares.dir/src/ls.c.s
+.PHONY : src/ls.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,9 +261,18 @@ help:
 	@echo "... src/ares.o"
 	@echo "... src/ares.i"
 	@echo "... src/ares.s"
+	@echo "... src/cd.o"
+	@echo "... src/cd.i"
+	@echo "... src/cd.s"
+	@echo "... src/exit.o"
+	@echo "... src/exit.i"
+	@echo "... src/exit.s"
 	@echo "... src/help.o"
 	@echo "... src/help.i"
 	@echo "... src/help.s"
+	@echo "... src/ls.o"
+	@echo "... src/ls.i"
+	@echo "... src/ls.s"
 .PHONY : help
 
 
