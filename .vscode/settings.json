@@ -3,5 +3,6 @@
         "dirent.h": "c",
         "errno.h": "c",
         "wait.h": "c"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
