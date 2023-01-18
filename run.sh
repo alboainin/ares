@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./ares
+./bin/ares
