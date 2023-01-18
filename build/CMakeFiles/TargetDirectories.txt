@@ -1,0 +1,3 @@
+/home/ali/proj/ares/build/CMakeFiles/ares.dir
+/home/ali/proj/ares/build/CMakeFiles/edit_cache.dir
+/home/ali/proj/ares/build/CMakeFiles/rebuild_cache.dir
