@@ -238,6 +238,8 @@ int ares_execute(char **args)
     return 1;
   }
 
+  int i;
+
   // Check for alias command
   if (strcmp(args[0], "alias") == 0)
   {
@@ -255,10 +257,8 @@ int ares_execute(char **args)
   if (alias_value != NULL)
   {
     char **alias_args = build_alias_args(alias_value, args);
-    return ares_launch(alias_args);
+    args = alias_args;
   }
-
-  int i;
 
   for (i = 0; i < ares_num_builtins(); i++)
   {
