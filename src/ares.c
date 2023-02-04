@@ -10,6 +10,22 @@ char *ares_read_line(void);
 char **ares_split_line(char *line);
 int ares_launch(char **args);
 int ares_execute(char **args);
+int count_args(char **args);
+
+#define ANSI_COLOR_RED "\x1b[31m"
+#define ANSI_COLOR_GREEN "\x1b[32m"
+#define ANSI_COLOR_YELLOW "\x1b[33m"
+#define ANSI_COLOR_BLUE "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN "\x1b[36m"
+#define ANSI_COLOR_RESET "\x1b[0m"
+
+#define ANSI_COLOR_RED_BOLD "\x1b[1;6;31m"
+#define ANSI_COLOR_GREEN_BOLD "\x1b[32m"
+#define ANSI_COLOR_YELLOW_BOLD "\x1b[33m"
+#define ANSI_COLOR_BLUE_BOLD "\x1b[34m"
+#define ANSI_COLOR_MAGENTA_BOLD "\x1b[35m"
+#define ANSI_COLOR_CYAN_BOLD "\x1b[36m"
 
 int main(int argc, char **argv)
 {
@@ -29,9 +45,16 @@ void ares_loop(void)
   char **args;
   int status;
 
+  /* Prints hostname of the local device *EXPERIMENTAL FUNCTION* */
+
+  char hostname[HOST_NAME_MAX + 1];
+  gethostname(hostname, HOST_NAME_MAX + 1);
+
   do
   {
-    printf("> ");
+    printf(ANSI_COLOR_RED_BOLD "%s ~> ", hostname);
+    printf(ANSI_COLOR_RESET);
+
     line = ares_read_line();
     args = ares_split_line(line);
     status = ares_execute(args);
@@ -153,15 +176,89 @@ int ares_launch(char **args)
   return 1;
 }
 
+#define MAX_ALIAS_NAME_LENGTH 100
+#define MAX_ALIAS_VALUE_LENGTH 100
+
+typedef struct alias
+{
+  char name[MAX_ALIAS_NAME_LENGTH];
+  char value[MAX_ALIAS_VALUE_LENGTH];
+  struct alias *next;
+} alias_t;
+
+alias_t *alias_list = NULL;
+
+void add_alias(char *name, char *value)
+{
+  alias_t *new_alias = malloc(sizeof(alias_t));
+  strncpy(new_alias->name, name, MAX_ALIAS_NAME_LENGTH);
+  strncpy(new_alias->value, value, MAX_ALIAS_VALUE_LENGTH);
+  new_alias->next = alias_list;
+  alias_list = new_alias;
+}
+
+char *get_alias_value(char *name)
+{
+  alias_t *current = alias_list;
+  while (current != NULL)
+  {
+    if (strcmp(current->name, name) == 0)
+    {
+      return current->value;
+    }
+    current = current->next;
+  }
+  return NULL;
+}
+
+char **build_alias_args(char *alias_value, char **args)
+{
+  char **alias_args = malloc(sizeof(char *) * (count_args(args)) + MAX_ALIAS_VALUE_LENGTH);
+  int index = 0;
+  char *token = strtok(alias_value, " ");
+  while (token != NULL)
+  {
+    alias_args[index] = token;
+    index++;
+    token = strtok(NULL, " ");
+  }
+  for (int i = 1; i < count_args(args); i++)
+  {
+    alias_args[index] = args[i];
+    index++;
+  }
+  alias_args[index] = NULL;
+  return alias_args;
+}
+
 int ares_execute(char **args)
 {
-  int i;
-
   if (args[0] == NULL)
   {
-    // An empty command was entered
     return 1;
   }
+
+  // Check for alias command
+  if (strcmp(args[0], "alias") == 0)
+  {
+    if (args[1] == NULL || args[2] == NULL)
+    {
+      fprintf(stderr, "alias: missing argument(s)\n");
+      return 1;
+    }
+    add_alias(args[1], args[2]);
+    return 1;
+  }
+
+  // Check if the command is an alias
+  char *alias_value = get_alias_value(args[0]);
+  if (alias_value != NULL)
+  {
+    char **alias_args = build_alias_args(alias_value, args);
+    return ares_launch(alias_args);
+  }
+
+  int i;
 
   for (i = 0; i < ares_num_builtins(); i++)
   {
@@ -172,4 +269,14 @@ int ares_execute(char **args)
   }
 
   return ares_launch(args);
+}
+
+int count_args(char **args)
+{
+  int count = 0;
+  while (args[count] != NULL)
+  {
+    count++;
+  }
+  return count;
 }
