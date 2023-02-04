@@ -12,6 +12,9 @@ int ares_launch(char **args);
 int ares_execute(char **args);
 int count_args(char **args);
 
+void save_aliases(const char *filename);
+void load_aliases(const char *filename);
+
 #define ANSI_COLOR_RED "\x1b[31m"
 #define ANSI_COLOR_GREEN "\x1b[32m"
 #define ANSI_COLOR_YELLOW "\x1b[33m"
@@ -30,12 +33,12 @@ int count_args(char **args);
 int main(int argc, char **argv)
 {
   // Load config files, if any.
-
+  load_aliases("aliases.ares");
   // Run command loop.
   ares_loop();
 
   // Perform any shutdown/cleanup.
-
+  save_aliases("aliases.ares");
   return EXIT_SUCCESS;
 }
 
@@ -279,4 +282,37 @@ int count_args(char **args)
     count++;
   }
   return count;
+}
+
+void save_aliases(const char *filename)
+{
+  FILE *fp = fopen(filename, "w");
+  if (fp == NULL)
+  {
+    perror("Error saving aliases");
+    return;
+  }
+  alias_t *current = alias_list;
+  while (current != NULL)
+  {
+    fprintf(fp, "%s %s\n", current->name, current->value);
+    current = current->next;
+  }
+  fclose(fp);
+}
+
+void load_aliases(const char *filename)
+{
+  FILE *fp = fopen(filename, "r");
+  if (fp == NULL)
+  {
+    return;
+  }
+  char name[MAX_ALIAS_NAME_LENGTH];
+  char value[MAX_ALIAS_VALUE_LENGTH];
+  while (fscanf(fp, "%s %s\n", name, value) == 2)
+  {
+    add_alias(name, value);
+  }
+  fclose(fp);
 }
